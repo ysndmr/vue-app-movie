@@ -1,27 +1,27 @@
 <template>
-<div class="image__hero moviexfly">
+  <div class="image__hero moviexfly">
 
-  <div class="this.slideGrouphow-container" style="  height: 100vh;position: relative">
-    <div class="image__hero--item fade" v-for="movie in this.$store.state.soonMovies" v-bind:key="movie.id">
-      <div class="image__hero--bg" v-bind:style="{ backgroundImage: 'url(' + movie.src + ')' }"></div>
+    <div class="this.slideGrouphow-container" style="  height: 100vh;position: relative">
+      <div class="image__hero--item fade" v-for="movie in this.$store.state.soonMovies" v-bind:key="movie.id">
+        <div class="image__hero--bg" v-bind:style="{ backgroundImage: 'url(' + movie.src + ')' }"></div>
 
-      <div class="image__hero--title">
-        <span>Coming in</span><time>{{movie.when}}</time>
-        <h1>{{movie.title}}</h1>
-        <p>{{movie.description}}</p>
-        <strong>Starring : {{movie.stars}}</strong>
-        <a href="#" class="style-button">+ Remind Me</a>
+        <div class="image__hero--title">
+          <span>Coming in</span><time>{{movie.when}}</time>
+          <h1>{{movie.title}}</h1>
+          <p>{{movie.description}}</p>
+          <strong>Starring : {{movie.stars}}</strong>
+          <a href="#" class="style-button">+ Remind Me</a>
+        </div>
       </div>
+      <a class="prev" @click="plusSlides(-1)">&#10094;</a>
+      <a class="next" @click="plusSlides(1)">&#10095;</a>
     </div>
-    <a class="prev" @click="plusSlides(-1)">&#10094;</a>
-    <a class="next" @click="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center;position: relative;top: -120px;">
+      <span class="smallSlider" @click="currentSlide(1)"></span>
+      <span class="smallSlider" @click="currentSlide(2)"></span>
+      <span class="smallSlider" @click="currentSlide(3)"></span>
+    </div>
   </div>
-  <div style="text-align:center">
-    <span class="dot" @click="currentSlide(1)"></span>
-    <span class="dot" @click="currentSlide(2)"></span>
-    <span class="dot" @click="currentSlide(3)"></span>
-  </div>
-</div>
 </template>
 
 <script>
@@ -37,13 +37,13 @@ export default {
   methods : {
     plusSlides(item) {
       this.showSlides(this.sliderIn += item);
-},
-currentSlide(item) {
-  this.showSlides(this.sliderIn = item);
-},
+    },
+    currentSlide(item) {
+      this.showSlides(this.sliderIn = item);
+    },
     showSlides(item) {
       this.slideGroup = document.getElementsByClassName("image__hero--item");
-      this.smallGroup = document.getElementsByClassName("dot");
+      this.smallGroup = document.getElementsByClassName("smallSlider");
       if (item > this.slideGroup.length) {this.sliderIn = 1}
       if (item < 1) {this.sliderIn = this.slideGroup.length}
       debugger// eslint-disable-line no-debugger
@@ -66,7 +66,6 @@ header.header{
   z-index: 3;
 }
 .image__hero{
-
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-box;
@@ -100,7 +99,6 @@ header.header{
     bottom:100px;
     left:100px;
     position: absolute;
-    bottom
     h1{
       background: rgba(0, 0, 0, 0.4);
       padding: 10px;
@@ -150,7 +148,7 @@ header.header{
     padding: 16px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 40px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -165,7 +163,7 @@ header.header{
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
   }
-  .dot {
+  .smallSlider {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -176,7 +174,7 @@ header.header{
     transition: background-color 0.6s ease;
   }
 
-  .active, .dot:hover {
+  .active, .smallSlider:hover {
     background-color: #717171;
   }
 }
