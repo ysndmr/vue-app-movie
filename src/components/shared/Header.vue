@@ -73,7 +73,7 @@ $fullWidth:100%;
   }
 
   .nav {
-    padding: 20px;
+    padding: 10px;
 
     &__container {
       display: -webkit-box;
@@ -130,7 +130,7 @@ $fullWidth:100%;
       font-size: 1.1rem;
       transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
       margin-right: .5rem;
-      padding: .7rem;
+      padding: .7rem 0;
       margin-left: .5rem;
       font-weight: 300;
       text-shadow: 2px 2px 2px #000;
