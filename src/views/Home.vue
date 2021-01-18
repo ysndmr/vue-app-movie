@@ -17,7 +17,7 @@
       <a class="next" @click="plusSlides(1)">&#10095;</a>
     </div>
 
-    <div style="text-align:center;position: relative;top: -120px;">
+    <div style="text-align:center;position: relative;top: -160px;">
 
       <span class="smallSlider" v-for="(movie, index)  in this.$store.state.soonMovies" v-bind:key="movie.id" @click="currentSlide(index+1
       )"><img :src="movie.src" alt=""></span>
@@ -95,10 +95,10 @@ header.header{
   }
   &--title{
     line-height: 150%;
-    width: 65%;
+    width: 75%;
     text-align:left;
-    bottom:100px;
-    left:100px;
+    bottom:140px;
+    left:60px;
     position: absolute;
     h1{
       background: rgba(0, 0, 0, 0.4);
