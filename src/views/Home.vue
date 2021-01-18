@@ -16,10 +16,12 @@
       <a class="prev" @click="plusSlides(-1)">&#10094;</a>
       <a class="next" @click="plusSlides(1)">&#10095;</a>
     </div>
+
     <div style="text-align:center;position: relative;top: -120px;">
-      <span class="smallSlider" @click="currentSlide(1)"></span>
-      <span class="smallSlider" @click="currentSlide(2)"></span>
-      <span class="smallSlider" @click="currentSlide(3)"></span>
+
+      <span class="smallSlider" v-for="(movie, index)  in this.$store.state.soonMovies" v-bind:key="movie.id" @click="currentSlide(index+1
+      )"><img :src="movie.src" alt=""></span>
+
     </div>
   </div>
 </template>
@@ -46,7 +48,6 @@ export default {
       this.smallGroup = document.getElementsByClassName("smallSlider");
       if (item > this.slideGroup.length) {this.sliderIn = 1}
       if (item < 1) {this.sliderIn = this.slideGroup.length}
-      debugger// eslint-disable-line no-debugger
       for (let i = 0; i < this.slideGroup.length; i++) {
         this.slideGroup[i].style.display = "none";
       }
@@ -165,17 +166,19 @@ header.header{
   }
   .smallSlider {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
+    width: 100px;
+    border: 2px solid transparent;
+    margin: 0 5px;
     display: inline-block;
     transition: background-color 0.6s ease;
+    img{
+      width: 100%;
+      height: auto;
+    }
   }
 
   .active, .smallSlider:hover {
-    background-color: #717171;
+    border-color: #E50914;
   }
 }
 .fade {
