@@ -19,8 +19,8 @@
 
     <div style="text-align:center;position: relative;top: -160px;">
 
-      <span class="smallSlider" v-for="(movie, index)  in this.$store.state.soonMovies" v-bind:key="movie.id" @click="currentSlide(index+1
-      )"><img :src="movie.src" alt=""></span>
+      <span  class="smallSlider" :class="{ 'active': index === 0 }" v-for="(movie, index)  in this.$store.state.soonMovies" v-bind:key="movie.id" @click="currentSlide(index+1
+      )" ><img :src="movie.src" alt=""></span>
 
     </div>
   </div>
