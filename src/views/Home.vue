@@ -17,7 +17,7 @@
       <a class="next" @click="plusSlides(1)">&#10095;</a>
     </div>
 
-    <div style="text-align:center;position: relative;top: -160px;">
+    <div style="text-align:center;position: relative;top: -180px;">
 
       <span  class="smallSlider" :class="{ 'active': index === 0 }" v-for="(movie, index)  in this.$store.state.soonMovies" v-bind:key="movie.id" @click="currentSlide(index+1
       )" ><img :src="movie.src" alt=""></span>
