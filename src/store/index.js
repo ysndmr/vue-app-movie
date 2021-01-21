@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     updateMovie : [],
     newArray : [],
+    updateDetailMovie : [],
     editMode : false,
     embedVideoUrl : null,
     embedVideoTitle : null,
