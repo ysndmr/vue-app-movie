@@ -1,5 +1,8 @@
 <template>
 <div class="movies__details">
+  <a class="movies__details--close" href="#" @click="$emit('onClose')" >
+    X
+  </a>
   <div class="modal-title">{{ this.$store.state.updateDetailMovie.title}} Trailer</div>
   <object width="100%" height="333">
     <param name="movie" :value=" this.$store.state.updateDetailMovie.url +'?autoplay=1'">
@@ -32,6 +35,17 @@ destroyed() {
 
 <style lang="scss" scoped>
 .movies__details{
+  &--close{
+    position: absolute;
+    right: 0;
+    background: #000;
+    padding: 17px 25px;
+    top: 32px;
+    color: #fff;
+    &:hover{
+      background: #e50914;
+    }
+  }
   &--information{
     display: block;
     margin: 1px 0;
