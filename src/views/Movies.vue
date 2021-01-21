@@ -48,6 +48,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     grid-gap: 0.3rem;
+
     &--item{
       position: relative;
       display: block;
@@ -129,6 +130,11 @@ export default {
       width: 80%;
       background-position: 50% 50% !important;
     }
+  }
+}
+@media only screen and (max-width: 30rem) {
+  .container__list{
+    display: block!important;
   }
 }
 </style>
