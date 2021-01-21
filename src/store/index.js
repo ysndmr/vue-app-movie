@@ -8,7 +8,6 @@ export default new Vuex.Store({
   state: {
     updateMovie : [],
     newArray : [],
-    updateDetailMovie : [],
     editMode : false,
     embedVideoUrl : null,
     embedVideoTitle : null,
@@ -139,6 +138,7 @@ export default new Vuex.Store({
         type:'Adventure',
         year : '2021',
         stars :"Omar Sy, Vincent Londez, Antoine Gouy  ",
+        url :"https://www.youtube.com/embed/PtDQbbLj5t0",
         description : "Inspired by the adventures of Arsène Lupin, gentleman thief Assane Diop sets out to avenge his father for an injustice inflicted by a wealthy family.",
         when : 'Now',
         src : 'https://www.moviemeter.nl/afbeeldingen/artikel/1920x1080/netflix-kijktip-misdaadserie-lupin-met-bekroonde-acteur-omar-sy-21001610019120.jpg'
