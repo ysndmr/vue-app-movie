@@ -13,7 +13,7 @@
             <p>
               {{movie.description}}
             </p>
-            <a href="#"  v-on:click.prevent="openModalTrailer($event)" :data-title="movie.title" :data-id="movie.url" class="style-button"> Watch Trailer</a>
+            <a href="#"  v-on:click.prevent="openModalTrailer($event, movie)" :data-title="movie.title" :data-id="movie.url" class="style-button"> Watch Trailer</a>
 
           </div>
         </div>
@@ -29,14 +29,22 @@ import ModalRoot from '@/components/ModalRoot';
 import Trailer from '@/components/common/Trailer';
 
 export default {
-  name: 'Home',
-  components: {
+  name: 'Home',  components: {
     ModalRoot
   },
+
   methods : {
-    openModalTrailer(event) {
-      this.$store.state.embedVideoUrl = event.target.getAttribute('data-id');
-      this.$store.state.embedVideoTitle = event.target.getAttribute('data-title');
+    openModalTrailer(event, movie) {
+      this.$store.state.updateDetailMovie = {
+        title : movie.title,
+        id : movie.id,
+        description : movie.description,
+        url : movie.url,
+        type: movie.type,
+        stars : movie.stars,
+        year : movie.year,
+        rating : movie.rating
+      }
       ModalBus.$emit('open', {component: Trailer})
     }
   }

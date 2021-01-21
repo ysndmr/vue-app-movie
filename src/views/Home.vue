@@ -10,7 +10,7 @@
           <h1>{{movie.title}}</h1>
           <p>{{movie.description}}</p>
           <strong>Starring : {{movie.stars}}</strong>
-          <a href="#"  v-on:click.prevent="openModalTrailer($event)" :data-title="movie.title" :data-id="movie.url" class="style-button"> Watch Trailer</a>
+          <a href="#"  v-on:click.prevent="openModalTrailer($event, movie)" :data-title="movie.title" :data-id="movie.url" class="style-button"> Watch Trailer</a>
         </div>
       </div>
       <a class="prev" @click="plusSlides(-1)">&#10094;</a>
@@ -34,7 +34,7 @@ import Trailer from '@/components/common/Trailer';
 
 export default {
   name: 'Home',
-  components : {
+  components: {
     ModalRoot
   },
   data(){
@@ -45,10 +45,18 @@ export default {
     }
   },
   methods : {
-    openModalTrailer(event){
-      this.$store.state.embedVideoUrl = event.target.getAttribute('data-id');
-      this.$store.state.embedVideoTitle = event.target.getAttribute('data-title');
-      ModalBus.$emit('open', { component: Trailer })
+    openModalTrailer(event, movie) {
+      this.$store.state.updateDetailMovie = {
+        title : movie.title,
+        id : movie.id,
+        description : movie.description,
+        url : movie.url,
+        type: movie.type,
+        stars : movie.stars,
+        year : movie.year,
+        rating : movie.rating
+      }
+      ModalBus.$emit('open', {component: Trailer})
     },
     plusSlides(item) {
       this.showSlides(this.sliderIn += item);
@@ -151,6 +159,7 @@ header.header{
     animation: 30s ease 0s normal none infinite running zoomEffect;
     -webkit-animation: 30s  ease 0s normal none infinite running zoomEffect;
     -o-animation: 30s ease 0s normal none infinite running zoomEffect;
+    -moz--o-animation: 30s  ease 0s normal none infinite running zoomEffect
   }
   .prev, .next {
     cursor: pointer;

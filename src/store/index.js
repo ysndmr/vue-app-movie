@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     updateMovie : [],
+   updateDetailMovie : [],
     newArray : [],
     editMode : false,
     embedVideoUrl : null,
@@ -26,7 +27,10 @@ export default new Vuex.Store({
         stars :"Krysten Ritter,David Tennant,Rachael Taylor",
         description : "Haunted by a traumatic past, Jessica Jones uses her gifts as a private eye to find her tormentor before he can harm anyone else in Hell's Kitchen.",
         when : '2021 March',
+        type:'Drama',
+        year : '2013',
         url :"https://www.youtube.com/embed/nWHUjuJ8zxE",
+        rating : '8.9',
         src : 'https://occ-0-435-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABcBEokjH4yBUnJcoCerGHuigJArkU_QuqFaD00ho_WT7LdTTNqJRrtmFkDffLLhpy4W6ivi4YUMmHL8OIws2qoZ3okLB.jpg?r=142'
       },
       {
@@ -34,6 +38,9 @@ export default new Vuex.Store({
         stars :"George Clooney, John Turturro, Tim Blake Nelson",
         description : "Drie gevangenen ontsnappen uit een gevangenis in Mississippi tijdens de Grote Depressie en gaan, in de trant van de Odyssee van Homerus, op zoek naar een verstopte buit..",
         when : '2021 May',
+        type:'Drama',
+        rating : '7.9',
+        year : '2013',
         url :"https://www.youtube.com/embed/n9UlbxlM5nE",
         src : 'https://occ-0-571-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABfYF-Mv3FCZ-KAx_nT1x6MusdtHV4ils9lzA_9iIa4KpaFFDBZUVrOAdKxKVcyljVIwEnZRgNkPC5YCG4Ewo1WJS9YO1.webp?r=ae0'
       },
@@ -42,6 +49,9 @@ export default new Vuex.Store({
         stars :"Aaron Eckhart, Courtney Eaton, Ben McKenzie ",
         description : "Een in ongenade gevallen agent racet tegen de klok om de dochter van de politiechef te redden van een gestoorde verdachte. Een journaliste livestreamt zijn zoektocht.",
         when : 'Now',
+        rating : '6.9',
+        type:'Drama',
+        year : '2013',
         url :"https://www.youtube.com/embed/PtDQbbLj5t0",
         src : 'https://occ-0-571-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABXmEM72XCbajd6NgY_lPVbA9KdKZWawSOAlwmqoucS4P_Yb7MksCkNyNCz9bDW_95k9cn9TEqB7k1Z9Pq67WyQH8YTA-.webp?r=1ec'
       }
@@ -104,6 +114,7 @@ export default new Vuex.Store({
         stars :"Krysten Ritter,David Tennant,Rachael Taylor",
         description : "Haunted by a traumatic past, Jessica Jones uses her gifts as a private eye to find her tormentor before he can harm anyone else in Hell's Kitchen.",
         when : '2021 March',
+        rating : 8.9,
         url :"https://www.youtube.com/embed/nWHUjuJ8zxE",
         src : 'https://occ-0-435-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABcBEokjH4yBUnJcoCerGHuigJArkU_QuqFaD00ho_WT7LdTTNqJRrtmFkDffLLhpy4W6ivi4YUMmHL8OIws2qoZ3okLB.jpg?r=142'
       },
@@ -137,6 +148,7 @@ export default new Vuex.Store({
         totalTime : '2h 12min',
         type:'Adventure',
         year : '2021',
+        rating : '7.6',
         stars :"Omar Sy, Vincent Londez, Antoine Gouy  ",
         url :"https://www.youtube.com/embed/PtDQbbLj5t0",
         description : "Inspired by the adventures of Arsène Lupin, gentleman thief Assane Diop sets out to avenge his father for an injustice inflicted by a wealthy family.",
