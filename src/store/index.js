@@ -9,14 +9,16 @@ export default new Vuex.Store({
     updateMovie : [],
     newArray : [],
     editMode : false,
+    embedVideoUrl : null,
+    embedVideoTitle : null,
     modalBox : {
       title : '',
-        content: "",
-        type: "",
-        setTimeOut: 3000,
-        className : '',
-        autoOpen: false,
-        modalTypeClass: ""
+      content: "",
+      type: "",
+      setTimeOut: 3000,
+      className : '',
+      autoOpen: false,
+      modalTypeClass: ""
     },
     soonMovies : [
       {
@@ -24,6 +26,7 @@ export default new Vuex.Store({
         stars :"Krysten Ritter,David Tennant,Rachael Taylor",
         description : "Haunted by a traumatic past, Jessica Jones uses her gifts as a private eye to find her tormentor before he can harm anyone else in Hell's Kitchen.",
         when : '2021 March',
+        url :"https://www.youtube.com/embed/nWHUjuJ8zxE",
         src : 'https://occ-0-435-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABcBEokjH4yBUnJcoCerGHuigJArkU_QuqFaD00ho_WT7LdTTNqJRrtmFkDffLLhpy4W6ivi4YUMmHL8OIws2qoZ3okLB.jpg?r=142'
       },
       {
@@ -31,6 +34,7 @@ export default new Vuex.Store({
         stars :"George Clooney, John Turturro, Tim Blake Nelson",
         description : "Drie gevangenen ontsnappen uit een gevangenis in Mississippi tijdens de Grote Depressie en gaan, in de trant van de Odyssee van Homerus, op zoek naar een verstopte buit..",
         when : '2021 May',
+        url :"https://www.youtube.com/embed/n9UlbxlM5nE",
         src : 'https://occ-0-571-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABfYF-Mv3FCZ-KAx_nT1x6MusdtHV4ils9lzA_9iIa4KpaFFDBZUVrOAdKxKVcyljVIwEnZRgNkPC5YCG4Ewo1WJS9YO1.webp?r=ae0'
       },
       {
@@ -38,6 +42,7 @@ export default new Vuex.Store({
         stars :"Aaron Eckhart, Courtney Eaton, Ben McKenzie ",
         description : "Een in ongenade gevallen agent racet tegen de klok om de dochter van de politiechef te redden van een gestoorde verdachte. Een journaliste livestreamt zijn zoektocht.",
         when : 'Now',
+        url :"https://www.youtube.com/embed/PtDQbbLj5t0",
         src : 'https://occ-0-571-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABXmEM72XCbajd6NgY_lPVbA9KdKZWawSOAlwmqoucS4P_Yb7MksCkNyNCz9bDW_95k9cn9TEqB7k1Z9Pq67WyQH8YTA-.webp?r=1ec'
       }
     ],
@@ -50,6 +55,7 @@ export default new Vuex.Store({
         description: 'An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.',
         totalTime : '2h 19min',
         year : '1999',
+        url : 'https://www.youtube.com/embed/SUXWAEX2jlg',
         stars: 'Brad Pitt, Edward Norton',
         rating : '8.9'
       },
@@ -61,6 +67,7 @@ export default new Vuex.Store({
         description: 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.',
         totalTime : '2h 22min',
         year : '1994',
+        url : 'https://www.youtube.com/embed/bLvqoHBptjg',
         stars: ' Tom Hanks, Robin Wright, Gary Sinise',
         rating : '8.8'
       },
@@ -72,6 +79,7 @@ export default new Vuex.Store({
         description: 'A widow tries to find out why her daughter\'s strange behavior, a reaction to her father\'s death, is progressively worsening.',
         totalTime : '2h 22min',
         year : '1993',
+        url : 'https://www.youtube.com/embed/SvSkxBYuoQY',
         stars: ' Frank Underwood',
         rating : '8.8'
       },
@@ -83,6 +91,7 @@ export default new Vuex.Store({
         description: 'When a past crime catches up with her, a privileged New Yorker ends up in a women\'s prison, where she quickly makes friends and foes.',
         totalTime : '2h 22min',
         year : '2013',
+        url : 'https://www.youtube.com/embed/vY0qzXi5oJg',
         stars: ' Taylor Schilling, Kate Mulgrew, Laura Prepon',
         rating : '5.8'
       },
@@ -95,6 +104,7 @@ export default new Vuex.Store({
         stars :"Krysten Ritter,David Tennant,Rachael Taylor",
         description : "Haunted by a traumatic past, Jessica Jones uses her gifts as a private eye to find her tormentor before he can harm anyone else in Hell's Kitchen.",
         when : '2021 March',
+        url :"https://www.youtube.com/embed/nWHUjuJ8zxE",
         src : 'https://occ-0-435-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABcBEokjH4yBUnJcoCerGHuigJArkU_QuqFaD00ho_WT7LdTTNqJRrtmFkDffLLhpy4W6ivi4YUMmHL8OIws2qoZ3okLB.jpg?r=142'
       },
       {
@@ -106,6 +116,7 @@ export default new Vuex.Store({
         stars :"George Clooney, John Turturro, Tim Blake Nelson",
         description : "Drie gevangenen ontsnappen uit een gevangenis in Mississippi tijdens de Grote Depressie en gaan, in de trant van de Odyssee van Homerus, op zoek naar een verstopte buit..",
         when : '2021 May',
+        url :"https://www.youtube.com/embed/n9UlbxlM5nE",
         src : 'https://occ-0-571-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABfYF-Mv3FCZ-KAx_nT1x6MusdtHV4ils9lzA_9iIa4KpaFFDBZUVrOAdKxKVcyljVIwEnZRgNkPC5YCG4Ewo1WJS9YO1.webp?r=ae0'
       },
       {
@@ -117,6 +128,7 @@ export default new Vuex.Store({
         stars :"Aaron Eckhart, Courtney Eaton, Ben McKenzie ",
         description : "Een in ongenade gevallen agent racet tegen de klok om de dochter van de politiechef te redden van een gestoorde verdachte. Een journaliste livestreamt zijn zoektocht.",
         when : 'Now',
+        url :"https://www.youtube.com/embed/PtDQbbLj5t0",
         src : 'https://occ-0-571-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABXmEM72XCbajd6NgY_lPVbA9KdKZWawSOAlwmqoucS4P_Yb7MksCkNyNCz9bDW_95k9cn9TEqB7k1Z9Pq67WyQH8YTA-.webp?r=1ec'
       },
       {
@@ -152,7 +164,7 @@ export default new Vuex.Store({
   /* eslint-disable */
   actions: {
     saveMovie({commit}, payLoad){
-     commit('setMovieData', payLoad);
+      commit('setMovieData', payLoad);
     },
     updateMovie({commit}, payLoad){
       /* eslint-disable */

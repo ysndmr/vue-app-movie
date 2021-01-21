@@ -13,14 +13,35 @@
             <p>
               {{movie.description}}
             </p>
-            <a href="#" class="style-button">Watch Now</a>
+            <a href="#"  v-on:click.prevent="openModalTrailer($event)" :data-title="movie.title" :data-id="movie.url" class="style-button"> Watch Trailer</a>
+
           </div>
         </div>
         <div class="container__list--cover" v-bind:style="{ backgroundImage: 'url(' + movie.src + ')' }"></div>
       </div>
     </div>
+    <ModalRoot />
   </div>
 </template>
+<script>
+import {ModalBus} from "@/eventBus";
+import ModalRoot from '@/components/ModalRoot';
+import Trailer from '@/components/common/Trailer';
+
+export default {
+  name: 'Home',
+  components: {
+    ModalRoot
+  },
+  methods : {
+    openModalTrailer(event) {
+      this.$store.state.embedVideoUrl = event.target.getAttribute('data-id');
+      this.$store.state.embedVideoTitle = event.target.getAttribute('data-title');
+      ModalBus.$emit('open', {component: Trailer})
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 .container{
   &__list{
