@@ -6,11 +6,9 @@
 		<div class="modal-title">{{ this.$store.state.updateDetailMovie.title }} {{ title }}</div>
 		<object width="100%" height="333" v-if="!this.$store.state.updateDetailMovie.url == '' ">
 			<param name="movie" :value=" this.$store.state.updateDetailMovie.url +'?autoplay=1'">
-			<embed :src="this.$store.state.updateDetailMovie.url +'?autoplay=1'" type="application/x-shockwave-flash"
-						 width="100%" height="333">
+			<embed :src="this.$store.state.updateDetailMovie.url +'?autoplay=1'" type="application/x-shockwave-flash" width="100%" height="333">
 		</object>
-		<img width="200" height="200" v-if="this.$store.state.updateDetailMovie.url == undefined " :src="this.$store.state.updateDetailMovie.src"
-				 :alt="this.$store.state.updateDetailMovie.title">
+		<img width="200" height="200" v-if="this.$store.state.updateDetailMovie.url == undefined " :src="this.$store.state.updateDetailMovie.src" :alt="this.$store.state.updateDetailMovie.title">
 		<div class="movies__details--information">
 			<h2>{{ this.$store.state.updateDetailMovie.description }}</h2>
 		</div>
