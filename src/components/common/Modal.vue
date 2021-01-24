@@ -50,12 +50,14 @@ export default {
 }
 .modal-dialog {
   width: 40rem;
+  height: 40rem;
   background: rgb(255, 255, 255);
   padding: 2rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-radius: 0.3rem;
   transition: 0.5s;
   position: relative;
+	overflow: scroll;
 }
 .modal-title {
   font-weight: bold;

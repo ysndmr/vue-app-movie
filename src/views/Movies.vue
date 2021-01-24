@@ -40,6 +40,7 @@ export default {
         id : movie.id,
         description : movie.description,
         url : movie.url,
+				src : movie.src,
         type: movie.type,
         stars : movie.stars,
         year : movie.year,
