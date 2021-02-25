@@ -1,5 +1,5 @@
 # vue-movies-app
-
+Demo :  https://moviexfly-app-vue-yasin-demir.netlify.app/
 ## Project setup
 ```
 npm install
